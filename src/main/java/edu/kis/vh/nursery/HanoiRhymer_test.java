@@ -4,14 +4,14 @@ public class HanoiRhymer_test extends CountingOutRhymer {
 
     int totalRejected = 0;
 
-    public int reportRejected() {
+    public int reportRejected_test() {
         return totalRejected;
     }
 
-    public void countIn(int in) {
-        if (!callCheck() && in > peekaboo())
+    public void countIn_test(int in) {
+        if (!callCheck_test() && in > peekaboo_test())
             totalRejected++;
         else
-            super.countIn(in);
+            super.countIn_test(in);
     }
 }

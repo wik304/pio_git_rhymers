@@ -5,14 +5,14 @@ public class FIFORhymer_test extends CountingOutRhymer {
     public CountingOutRhymer temp = new CountingOutRhymer();
 
     @Override
-    public int countOut() {
-        while (!callCheck())
-            temp.countIn(super.countOut());
+    public int countOut_test() {
+        while (!callCheck_test())
+            temp.countIn_test(super.countOut_test());
 
-        int ret = temp.countOut();
+        int ret = temp.countOut_test();
 
-        while (!temp.callCheck())
-            countIn(temp.countOut());
+        while (!temp.callCheck_test())
+            countIn_test(temp.countOut_test());
 
         return ret;
     }
