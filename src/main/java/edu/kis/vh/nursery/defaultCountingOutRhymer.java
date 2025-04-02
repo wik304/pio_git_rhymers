@@ -11,6 +11,26 @@ public class defaultCountingOutRhymer {
 
     private int total = -1;
 
+    public static int getMaxSize() {
+        return MAX_SIZE;
+    }
+
+    public static int getDefaultError() {
+        return DEFAULT_ERROR;
+    }
+
+    public static int getIfFull() {
+        return IF_FULL;
+    }
+
+    public static int getPeekaBooEmptyDeafaultError() {
+        return PEEKA_BOO_EMPTY_DEAFAULT_ERROR;
+    }
+
+    public static int getCountOutDefaultError() {
+        return COUNT_OUT_DEFAULT_ERROR;
+    }
+
     public int getTotal() {
         return total;
     }
@@ -40,4 +60,11 @@ public class defaultCountingOutRhymer {
         return numbers[total--];
     }
 
+    public int[] getNumbers() {
+        return numbers;
+    }
+
+    public void setTotal(int total) {
+        this.total = total;
+    }
 }

@@ -7,13 +7,21 @@ public class IntLinkedList {
     private Node last;
     int i;
 
+    public static int getTopErrorReturnValue() {
+        return TOP_ERROR_RETURN_VALUE;
+    }
+
+    public static int getPopErrorReturnValue() {
+        return POP_ERROR_RETURN_VALUE;
+    }
+
     private void push(int i) {
         if (last == null)
             last = new Node(i);
         else {
-            last.next = new Node(i);
-            last.next.prev = last;
-            last = last.next;
+            last.setNext(new Node(i));
+            last.getNext().setPrev(last);
+            last = last.getNext();
         }
     }
 
@@ -28,15 +36,22 @@ public class IntLinkedList {
     private int top() {
         if (isEmpty())
             return TOP_ERROR_RETURN_VALUE;
-        return last.value;
+        return last.getValue();
     }
 
     private int pop() {
         if (isEmpty())
             return POP_ERROR_RETURN_VALUE;
-        int ret = last.value;
-        last = last.prev;
+        int ret = last.getValue();
+        last = last.getPrev();
         return ret;
     }
 
+    public Node getLast() {
+        return last;
+    }
+
+    public void setLast(Node last) {
+        this.last = last;
+    }
 }
