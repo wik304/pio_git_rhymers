@@ -50,8 +50,4 @@ public class IntLinkedList {
     public Node getLast() {
         return last;
     }
-
-    public void setLast(Node last) {
-        this.last = last;
-    }
 }
