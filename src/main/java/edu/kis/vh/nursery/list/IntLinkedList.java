@@ -2,12 +2,12 @@ package edu.kis.vh.nursery.list;
 
 public class IntLinkedList {
 
-    public static final int TOP_ERROR_RETURN_VALUE = -1;
-    public static final int POP_ERROR_RETURN_VALUE = -1;
-    Node last;
+    private static final int TOP_ERROR_RETURN_VALUE = -1;
+    private static final int POP_ERROR_RETURN_VALUE = -1;
+    private Node last;
     int i;
 
-    public void push(int i) {
+    private void push(int i) {
         if (last == null)
             last = new Node(i);
         else {
@@ -17,21 +17,21 @@ public class IntLinkedList {
         }
     }
 
-    public boolean isEmpty() {
+    protected boolean isEmpty() {
         return last == null;
     }
 
-    public boolean isFull() {
+    protected boolean isFull() {
         return false;
     }
 
-    public int top() {
+    private int top() {
         if (isEmpty())
             return TOP_ERROR_RETURN_VALUE;
         return last.value;
     }
 
-    public int pop() {
+    private int pop() {
         if (isEmpty())
             return POP_ERROR_RETURN_VALUE;
         int ret = last.value;
