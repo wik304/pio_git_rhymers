@@ -2,25 +2,49 @@ package edu.kis.vh.nursery;
 
 public class defaultCountingOutRhymer {
 
-    public static final int MAX_SIZE = 12;
-    public static final int DEFAULT_ERROR = -1;
-    public static final int IF_FULL = 11;
-    public static final int PEEKA_BOO_EMPTY_DEAFAULT_ERROR = -1;
-    public static final int COUNT_OUT_DEFAULT_ERROR = -1;
+    private static final int MAX_SIZE = 12;
+    private static final int DEFAULT_ERROR = -1;
+    private static final int IF_FULL = 11;
+    private static final int PEEKA_BOO_EMPTY_DEAFAULT_ERROR = -1;
+    private static final int COUNT_OUT_DEFAULT_ERROR = -1;
     private final int[] numbers = new int[MAX_SIZE];
 
-    public int total = -1;
+    private int total = -1;
 
-    public void countIn(int in) {
+    public static int getMaxSize() {
+        return MAX_SIZE;
+    }
+
+    public static int getDefaultError() {
+        return DEFAULT_ERROR;
+    }
+
+    public static int getIfFull() {
+        return IF_FULL;
+    }
+
+    public static int getPeekaBooEmptyDeafaultError() {
+        return PEEKA_BOO_EMPTY_DEAFAULT_ERROR;
+    }
+
+    public static int getCountOutDefaultError() {
+        return COUNT_OUT_DEFAULT_ERROR;
+    }
+
+    public int getTotal() {
+        return total;
+    }
+
+    protected void countIn(int in) {
         if (!isFull())
             numbers[++total] = in;
     }
 
-    public boolean callCheck() {
+    protected boolean callCheck() {
         return total == DEFAULT_ERROR;
     }
-        
-    public boolean isFull() {
+
+    protected boolean isFull() {
         return total == IF_FULL;
     }
         
@@ -30,10 +54,13 @@ public class defaultCountingOutRhymer {
         return numbers[total];
     }
 
-    public int countOut() {
+    protected int countOut() {
         if (callCheck())
             return COUNT_OUT_DEFAULT_ERROR;
         return numbers[total--];
     }
 
+    public int[] getNumbers() {
+        return numbers;
+    }
 }
